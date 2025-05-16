@@ -14,7 +14,7 @@ const SAMPLE_JOBS = [
     type: 'Full-time',
     salary: '$120,000 - $150,000',
     tags: ['React', 'TypeScript', 'UI/UX'],
-    description: 'Leading e-commerce company seeking a talented Senior Frontend Developer to join our team. You'll work on high-impact projects and help shape the future of our platform.',
+    description: 'Leading e-commerce company seeking a talented Senior Frontend Developer to join our team. You\'ll work on high-impact projects and help shape the future of our platform.',
     postedDate: '2023-06-15',
     industry: 'Technology'
   },
