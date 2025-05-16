@@ -62,7 +62,7 @@ const SAMPLE_JOBS = [
     type: 'Full-time',
     salary: '$95,000 - $120,000',
     tags: ['Figma', 'User Research', 'Prototyping'],
-    description: 'Design agency looking for a talented UX/UI Designer to create beautiful, intuitive interfaces for our clients. You'll work on a variety of exciting projects.',
+    description: 'Design agency looking for a talented UX/UI Designer to create beautiful, intuitive interfaces for our clients. You\'ll work on a variety of exciting projects.',
     postedDate: '2023-06-25',
     industry: 'Design'
   }
