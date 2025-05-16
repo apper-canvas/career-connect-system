@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { getIcon } from './utils/iconUtils'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
+import CandidateProfile from './pages/CandidateProfile'
 
 const NavBar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -15,6 +16,7 @@ const NavBar = () => {
   const SunIcon = getIcon('Sun')
   const BriefcaseIcon = getIcon('Briefcase')
   const MenuIcon = getIcon('Menu')
+  const UserIcon = getIcon('User')
   const XIcon = getIcon('X')
 
   useEffect(() => {
@@ -59,6 +61,9 @@ const NavBar = () => {
           </a>
           <a href="#post" className="text-surface-700 hover:text-primary dark:text-surface-300 dark:hover:text-primary-light transition-colors">
             Post a Job
+          </a>
+          <a href="/candidate-profile" className="text-surface-700 hover:text-primary dark:text-surface-300 dark:hover:text-primary-light transition-colors">
+            Candidate Profile
           </a>
           <button
             onClick={toggleDarkMode}
@@ -117,6 +122,13 @@ const NavBar = () => {
             >
               Post a Job
             </a>
+            <a 
+              href="/candidate-profile" 
+              className="block py-2 px-4 text-surface-700 dark:text-surface-300 hover:bg-surface-100 dark:hover:bg-surface-700 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Candidate Profile
+            </a>
           </div>
         </div>
       )}
@@ -131,6 +143,7 @@ function App() {
       <div className="pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/candidate-profile" element={<CandidateProfile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
