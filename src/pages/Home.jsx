@@ -26,7 +26,7 @@ const SAMPLE_JOBS = [
     type: 'Full-time',
     salary: '$110,000 - $130,000',
     tags: ['Product Strategy', 'Agile', 'UX Research'],
-    description: 'Growing startup looking for an experienced Product Manager to drive our product vision and roadmap. You'll work closely with engineering and design teams.',
+    description: 'Growing startup looking for an experienced Product Manager to drive our product vision and roadmap. You\'ll work closely with engineering and design teams.',
     postedDate: '2023-06-18',
     industry: 'Technology' 
   },
@@ -50,7 +50,7 @@ const SAMPLE_JOBS = [
     type: 'Full-time',
     salary: '$85,000 - $105,000',
     tags: ['SQL', 'Python', 'Tableau'],
-    description: 'Financial services company seeking a Data Analyst to help transform data into actionable insights. You'll build dashboards and support decision-making processes.',
+    description: 'Financial services company seeking a Data Analyst to help transform data into actionable insights. You\'ll build dashboards and support decision-making processes.',
     postedDate: '2023-06-22',
     industry: 'Finance'
   },
