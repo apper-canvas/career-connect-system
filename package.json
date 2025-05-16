@@ -22,7 +22,6 @@
     "react-router-dom": "^6.15.0", 
     "react-dropzone": "^14.2.3",
     "pdfjs-dist": "^3.11.174",
-    "pdf-parse": null,
     "mammoth": "^1.6.0",
     "react-toastify": "^11.0.5"
   },
