@@ -1,5 +1,11 @@
-import pdfParse from 'pdf-parse';
+import * as pdfjsLib from 'pdfjs-dist';
 import mammoth from 'mammoth';
+
+// Initialize PDF.js
+// Set the workerSrc property before using PDF.js
+pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+// Alternative loading approach using npm package:
+// pdfjsLib.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.js', import.meta.url).toString();
 
 /**
  * Parse a PDF file and extract the text content
@@ -8,8 +14,28 @@ import mammoth from 'mammoth';
  */
 export const parsePdfFile = async (file) => {
   const arrayBuffer = await file.arrayBuffer();
-  const data = await pdfParse(Buffer.from(arrayBuffer));
-  return data.text;
+  const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+  
+  let fullText = '';
+  
+  // Iterate through each page to extract text
+  for (let i = 1; i <= pdf.numPages; i++) {
+    const page = await pdf.getPage(i);
+    const textContent = await page.getTextContent();
+    
+    // Extract text items and join them with spaces
+    const pageText = textContent.items
+      .map(item => item.str)
+      .join(' ');
+    
+    // Add page text to the full text with page breaks
+    if (fullText) {
+      fullText += '\n\n'; // Add page break
+    }
+    fullText += pageText;
+  }
+  
+  return fullText;
 };
 
 /**
